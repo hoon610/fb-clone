@@ -7,11 +7,13 @@ import ChatIcon from '@mui/icons-material/Chat';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
+import { useStateValue } from './StateProvider';
 
 function Sidebar() {
+  const [{user}, dispatch] = useStateValue();
   return (
     <div className='sidebar'>
-        <SidebarRow src="https://avatars.githubusercontent.com/u/123856266?v=4" title= 'Hoon Kang'/>
+        <SidebarRow src={user.photoURL} title= {user.displayName}/>
         <SidebarRow Icon={EmojiFlagsIcon} title='Pages' />
         <SidebarRow Icon={PeopleIcon} title='Friends' />
         <SidebarRow Icon={ChatIcon} title='Messenger' />

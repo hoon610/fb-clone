@@ -8,6 +8,7 @@ import NearMeIcon from '@mui/icons-material/NearMe';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 
 function Post({profilePic, image, username, timestamp, message}) {
+    const formattedTimestamp = new Date(timestamp?.toDate()).toLocaleString();
   return (
     <div className='post'>
         
@@ -15,7 +16,7 @@ function Post({profilePic, image, username, timestamp, message}) {
             <Avatar src={profilePic} className='post__avatar'/>
             <div className="post__topInfo">
                 <h3>{username}</h3>
-                <p>{timestamp}</p>
+                <p>{formattedTimestamp}</p>
             </div>
         </div>
 

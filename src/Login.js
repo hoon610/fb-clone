@@ -1,13 +1,30 @@
 import React from 'react'
 import "./Login.css"
 import { Button } from '@mui/material'
+import { auth, provider } from './firebase'
+import { useStateValue } from './StateProvider'
+import { actionTypes } from './reducer'
 
 function Login() {
+    const [state, dispatch] = useStateValue();
+
     const signIn = () => {
-        //sign in stuff
+        auth.signInWithPopup(provider)
+        .then(result => {
+            dispatch({
+                type: actionTypes.SET_USER,
+                user: result.user
+            })
+            console.log(result)
+        }).catch(error=> alert(error.message))
     }
     const signInGuest = () => {
-        //sign in stuff
+        dispatch({
+            type: actionTypes.SET_USER,
+            user: {
+                displayName: "Guest"
+            },
+        })
     }
 
   return (
@@ -17,10 +34,10 @@ function Login() {
         <img src="https://www.logo.wine/a/logo/Facebook/Facebook-Logo.wine.svg" alt="" className="src" />
         </div>
         <div className="buttons">
-        <Button type="submit" onCLick={signIn}>
+        <Button type="submit" onClick={signIn}>
         Sign in
         </Button>
-        <Button type="submit" onCLick={signInGuest}>
+        <Button type="submit" onClick={signInGuest}>
         Sign in as guest
         </Button>
         </div>

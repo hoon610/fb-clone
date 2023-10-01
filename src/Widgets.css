@@ -1,0 +1,19 @@
+.widgets{
+    width:380px;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 30px;
+    height: auto;
+    
+    
+}
+.widgets > .text {
+    text-align: none;
+    padding: 30px;
+}
+
+.widgets > div > p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
