@@ -12,12 +12,12 @@ function Widgets() {
           your own posts!
         </p>
         <p>
-          Currently, I have the functionality for adding posts to the timeline
-          and commenting as authenticated (or guest) users. Authenticated user
-          can also like posts as well. I am looking into adding additional
-          functionality such as a way for users to add friends! Most of the UI
-          buttons you see were a way for me to practice my React skills and
-          hopefully their functionality will be fleshed out soon as well!
+          Currently, I have the functionality for adding posts to the timeline,
+          liking, and commenting as authenticated (or guest) users. I am looking
+          into adding additional functionality such as a way for users to add
+          friends! Most of the UI buttons you see were a way for me to practice
+          my React skills and hopefully their functionality will be fleshed out
+          soon as well!
         </p>
         <p>
           Check me out on{" "}

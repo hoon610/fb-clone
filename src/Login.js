@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.css";
 import { Button } from "@mui/material";
-import { auth, provider } from "./firebase";
+import { auth, provider, defaultGuestID } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import { actionTypes } from "./reducer";
 import logo from "./assets/logo.png";
@@ -24,10 +24,13 @@ function Login() {
       .catch((error) => alert(error.message));
   };
   const signInGuest = () => {
+    // Set a default guest ID
+    const defaultGuestID = "guest123"; // You can generate a random ID or use any format you prefer
     dispatch({
       type: actionTypes.SET_USER,
       user: {
         displayName: "Guest",
+        uid: defaultGuestID,
       },
     });
   };
