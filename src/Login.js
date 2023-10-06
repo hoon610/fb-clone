@@ -9,6 +9,7 @@ import logo1 from "./assets/logo1.png";
 
 function Login() {
   const [state, dispatch] = useStateValue();
+  // eslint-disable-next-line no-unused-vars
 
   const signIn = () => {
     auth

@@ -11,6 +11,7 @@ import { serverTimestamp } from "firebase/firestore"; // Import serverTimestamp
 
 function MessageSender() {
   const [{ user }, dispatch] = useStateValue();
+  // eslint-disable-next-line no-unused-vars
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const MAX_CHARACTERS = 350;

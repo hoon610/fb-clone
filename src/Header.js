@@ -16,6 +16,7 @@ import { useStateValue } from "./StateProvider";
 import logo1 from "./assets/logo1.png";
 function Header() {
   const [{ user }, dispatch] = useStateValue();
+  // eslint-disable-next-line no-unused-vars
   return (
     <div className="header">
       <div className="header__left">
