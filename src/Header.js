@@ -1,71 +1,72 @@
-import React from 'react'
-import "./Header.css"
-import SearchIcon from '@mui/icons-material/Search';
-import HomeIcon from '@mui/icons-material/Home';
-import FlagIcon from '@mui/icons-material/Flag';
-import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
-import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
-import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
-import { Avatar } from '@mui/material';
-import { IconButton } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import ForumIcon from '@mui/icons-material/Forum';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useStateValue } from './StateProvider';
-
+import React from "react";
+import "./Header.css";
+import SearchIcon from "@mui/icons-material/Search";
+import HomeIcon from "@mui/icons-material/Home";
+import FlagIcon from "@mui/icons-material/Flag";
+import SubscriptionsOutlinedIcon from "@mui/icons-material/SubscriptionsOutlined";
+import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
+import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
+import { Avatar } from "@mui/material";
+import { IconButton } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import ForumIcon from "@mui/icons-material/Forum";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useStateValue } from "./StateProvider";
+import logo1 from "./assets/logo1.png";
 function Header() {
-  const [{user}, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
   return (
-    <div className='header'>
+    <div className="header">
       <div className="header__left">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/1024px-2021_Facebook_icon.svg.png" alt="facebook logo" />
+        <img src={logo1} alt="facebook logo" />
         <div className="header__input">
-            <SearchIcon />
-            <input placeholder="Search Facebook" type="text" />        
+          <SearchIcon />
+          <input placeholder="Search Facebook" type="text" />
         </div>
       </div>
-        
 
       <div className="header__center">
-        <div className="header__option 
-        header__option--active">
-            <HomeIcon fontSize='large' />
+        <div
+          className="header__option 
+        header__option--active"
+        >
+          <HomeIcon fontSize="large" />
         </div>
         <div className="header__option">
-            <FlagIcon fontSize='large' />
+          <FlagIcon fontSize="large" />
         </div>
         <div className="header__option">
-            <SubscriptionsOutlinedIcon fontSize='large' />
+          <SubscriptionsOutlinedIcon fontSize="large" />
         </div>
         <div className="header__option">
-            <StorefrontOutlinedIcon fontSize='large' />
+          <StorefrontOutlinedIcon fontSize="large" />
         </div>
         <div className="header__option">
-            <SupervisedUserCircleIcon fontSize='large' />
+          <SupervisedUserCircleIcon fontSize="large" />
         </div>
-       </div>
+      </div>
 
       <div className="header__right">
         <div className="header__info">
-            <Avatar src={user.photoURL}/>
-            <h4>{user.displayName}</h4>
+          <Avatar src={user.photoURL} />
+          <h4>{user.displayName}</h4>
         </div>
         <IconButton>
-            <AddIcon />
+          <AddIcon />
         </IconButton>
         <IconButton>
-            <ForumIcon />
+          <ForumIcon />
         </IconButton>
         <IconButton>
-            <NotificationsActiveIcon />
+          <NotificationsActiveIcon />
         </IconButton>
         <IconButton>
-            <ExpandMoreIcon />
+          <ExpandMoreIcon />
         </IconButton>
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
