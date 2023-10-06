@@ -19,6 +19,7 @@
 .login > div > button:hover {
     background-color: white;
     color: #2e81f4;
+    cursor: pointer !important;
 }
 
 .login > div {
